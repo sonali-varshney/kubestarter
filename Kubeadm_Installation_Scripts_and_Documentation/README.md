@@ -158,7 +158,7 @@ This guide outlines the steps needed to set up a Kubernetes cluster using `kubea
     sudo kubeadm reset pre-flight checks
     ```
 
-2. Paste the join command you got from the master node and append `--v=5` at the end so that wrker node hmare cluster se join ho jae:
+2. Paste the join command you got from the master node and append `--v=5` at the end so that wrker node hmare cluster se join ho jae and --v=5 isliye bcz hmari ye token version 5 pr chlta h:
     ```bash
     sudo kubeadm join <private-ip-of-control-plane>:6443 --token <token> --discovery-token-ca-cert-hash sha256:<hash> --cri-socket 
     "unix:///run/containerd/containerd.sock" --v=5
@@ -172,6 +172,7 @@ This guide outlines the steps needed to set up a Kubernetes cluster using `kubea
     > ```bash
     > sudo <paste-join-command-here> --v=5
     > ```
+    > ye fail ho jaegi worker node while connecting to cluster bcz isme 1 port likha aega loga me..vo port hme ec2 pr allow krna inbound rules me
 
 ---
 
