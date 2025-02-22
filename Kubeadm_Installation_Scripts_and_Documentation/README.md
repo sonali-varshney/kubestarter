@@ -173,6 +173,7 @@ This guide outlines the steps needed to set up a Kubernetes cluster using `kubea
     > sudo <paste-join-command-here> --v=5
     > ```
     > ye fail ho jaegi worker node while connecting to cluster bcz isme 1 port likha aega loga me..vo port hme ec2 pr allow krna inbound rules me
+    > ab kubelet start ho jaega worker node pr..logs me likha aega
 
 ---
 
