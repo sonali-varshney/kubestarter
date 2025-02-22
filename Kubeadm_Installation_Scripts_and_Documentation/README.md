@@ -130,14 +130,14 @@ This guide outlines the steps needed to set up a Kubernetes cluster using `kubea
     sudo kubeadm init
     ```
 
-2. **Set Up Local kubeconfig**:
+2. **Set Up Local kubeconfig..isse kubvectl command aram se chla paenge**:
     ```bash
     mkdir -p "$HOME"/.kube
     sudo cp -i /etc/kubernetes/admin.conf "$HOME"/.kube/config
     sudo chown "$(id -u)":"$(id -g)" "$HOME"/.kube/config
     ```
 
-3. **Install a Network Plugin (Calico)**:
+3. **Install a Network Plugin (Calico)..ye basically CNI bna rhe h so tht master nd wrker node apas me baat kr pae**:
     ```bash
     kubectl apply -f https://raw.githubusercontent.com/projectcalico/calico/v3.26.0/manifests/calico.yaml
     ```
@@ -153,12 +153,12 @@ This guide outlines the steps needed to set up a Kubernetes cluster using `kubea
 
 ## Execute on ALL of your Worker Nodes
 
-1. Perform pre-flight checks:
+1. Perform pre-flight checks(so that agr worker pr kubeadm init chl gya ho glti se bcz worker pr hmne kubeadm install kia tha so agr kubeadm chl rha ho wrker pr se to usko hta do):
     ```bash
     sudo kubeadm reset pre-flight checks
     ```
 
-2. Paste the join command you got from the master node and append `--v=5` at the end:
+2. Paste the join command you got from the master node and append `--v=5` at the end so that wrker node hmare cluster se join ho jae:
     ```bash
     sudo kubeadm join <private-ip-of-control-plane>:6443 --token <token> --discovery-token-ca-cert-hash sha256:<hash> --cri-socket 
     "unix:///run/containerd/containerd.sock" --v=5
