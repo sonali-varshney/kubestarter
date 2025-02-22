@@ -125,7 +125,7 @@ This guide outlines the steps needed to set up a Kubernetes cluster using `kubea
 
 ## Execute ONLY on the "Master" Node
 
-1. **Initialize the Cluster**:
+1. **Initialize the Cluster isse master k sare components bn jaenge we cn see the log messages**:
     ```bash
     sudo kubeadm init
     ```
